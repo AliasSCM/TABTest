@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Flows/Character/CharacterAPI.swift"
+            timestampString = "546012415.998017"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "fetchCharacters(completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Flows/Character/CharacterAPI.swift"
+            timestampString = "546012415.998108"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "getFeed(from:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TABTest.CharacterAPI.getFeed(from: TABTest.CharacterFeed, completion: (TABTest.Result&lt;Swift.Optional&lt;TABTest.CharacterModels.ListCharacters.Response&gt;, TABTest.APIError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TABTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/master/Desktop/Developer/TABTest/TABTest/Flows/Character/CharacterAPI.swift"
+                  timestampString = "546012416.360846"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Decodable) -&gt; Swift.Optional&lt;TABTest.CharacterModels.ListCharacters.Response&gt; in TABTest.CharacterAPI.getFeed(from: TABTest.CharacterFeed, completion: (TABTest.Result&lt;Swift.Optional&lt;TABTest.CharacterModels.ListCharacters.Response&gt;, TABTest.APIError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TABTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/master/Desktop/Developer/TABTest/TABTest/Flows/Character/CharacterAPI.swift"
+                  timestampString = "546012416.363153"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Common/APIClient.swift"
+            timestampString = "546012415.9981869"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "fetch(with:decode:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Decodable&gt;, Swift.Optional&lt;TABTest.APIError&gt;) -&gt; () in (extension in TABTest):TABTest.APIClient.fetch&lt;A where A1: Swift.Decodable&gt;(with: Foundation.URLRequest, decode: (Swift.Decodable) -&gt; Swift.Optional&lt;A1&gt;, completion: (TABTest.Result&lt;A1, TABTest.APIError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TABTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/master/Desktop/Developer/TABTest/TABTest/Common/APIClient.swift"
+                  timestampString = "546012416.3710901"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Decodable&gt;, Swift.Optional&lt;TABTest.APIError&gt;) -&gt; () in (extension in TABTest):TABTest.APIClient.fetch&lt;A where A1: Swift.Decodable&gt;(with: Foundation.URLRequest, decode: (Swift.Decodable) -&gt; Swift.Optional&lt;A1&gt;, completion: (TABTest.Result&lt;A1, TABTest.APIError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TABTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/master/Desktop/Developer/TABTest/TABTest/Common/APIClient.swift"
+                  timestampString = "546012416.3747"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "228">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Common/APIClient.swift"
+            timestampString = "546012415.99827"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "decodingTask(with:decodingType:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Common/APIClient.swift"
+            timestampString = "546012415.998347"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "fetch(with:decode:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Flows/Character/CharacterAPI.swift"
+            timestampString = "546012415.998423"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "fetchCharacters(completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (TABTest.Result&lt;Swift.Optional&lt;TABTest.CharacterModels.ListCharacters.Response&gt;, TABTest.APIError&gt;) -&gt; () in TABTest.CharacterAPI.fetchCharacters(completionHandler: (TABTest.CharacterStoreResult&lt;TABTest.CharacterModels.ListCharacters.Response&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TABTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/master/Desktop/Developer/TABTest/TABTest/Flows/Character/CharacterAPI.swift"
+                  timestampString = "546012416.393243"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "772">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (TABTest.Result&lt;Swift.Optional&lt;TABTest.CharacterModels.ListCharacters.Response&gt;, TABTest.APIError&gt;) -&gt; () in TABTest.CharacterAPI.fetchCharacters(completionHandler: (TABTest.CharacterStoreResult&lt;TABTest.CharacterModels.ListCharacters.Response&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TABTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/master/Desktop/Developer/TABTest/TABTest/Flows/Character/CharacterAPI.swift"
+                  timestampString = "546012416.39572"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "912">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Common/APIClient.swift"
+            timestampString = "546012415.998493"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "fetch(with:decode:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Flows/Character/CharacterAPI.swift"
+            timestampString = "546012415.998567"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "getFeed(from:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Common/StringExtension.swift"
+            timestampString = "546008243.33873"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "convertToDictionary()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Common/APIClient.swift"
+            timestampString = "546012415.998692"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "decodingTask(with:decodingType:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in (extension in TABTest):TABTest.APIClient.(decodingTask in _817B2A6AA3E7E63117213AA6FF36D7D6)&lt;A where A1: Swift.Decodable&gt;(with: Foundation.URLRequest, decodingType: A1.Type, completionHandler: (Swift.Optional&lt;Swift.Decodable&gt;, Swift.Optional&lt;TABTest.APIError&gt;) -&gt; ()) -&gt; __ObjC.URLSessionDataTask"
+                  moduleName = "TABTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/master/Desktop/Developer/TABTest/TABTest/Common/APIClient.swift"
+                  timestampString = "546012416.421349"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "1352">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in (extension in TABTest):TABTest.APIClient.(decodingTask in _817B2A6AA3E7E63117213AA6FF36D7D6)&lt;A where A1: Swift.Decodable&gt;(with: Foundation.URLRequest, decodingType: A1.Type, completionHandler: (Swift.Optional&lt;Swift.Decodable&gt;, Swift.Optional&lt;TABTest.APIError&gt;) -&gt; ()) -&gt; __ObjC.URLSessionDataTask"
+                  moduleName = "TABTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/master/Desktop/Developer/TABTest/TABTest/Common/APIClient.swift"
+                  timestampString = "546012416.424528"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "1468">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Common/APIClient.swift"
+            timestampString = "546012415.998768"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "decodingTask(with:decodingType:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Common/APIClient.swift"
+            timestampString = "546012415.998841"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "decodingTask(with:decodingType:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Common/APIClient.swift"
+            timestampString = "546012415.998915"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "decodingTask(with:decodingType:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Common/APIClient.swift"
+            timestampString = "546012415.998989"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "decodingTask(with:decodingType:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in TABTest):TABTest.APIClient.(decodingTask in _817B2A6AA3E7E63117213AA6FF36D7D6)&lt;A where A1: Swift.Decodable&gt;(with: Foundation.URLRequest, decodingType: A1.Type, completionHandler: (Swift.Optional&lt;Swift.Decodable&gt;, Swift.Optional&lt;TABTest.APIError&gt;) -&gt; ()) -&gt; __ObjC.URLSessionDataTask"
+                  moduleName = "TABTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/master/Desktop/Developer/TABTest/TABTest/Common/APIClient.swift"
+                  timestampString = "546012416.44754"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__ObjC.URLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in (extension in TABTest):TABTest.APIClient.(decodingTask in _817B2A6AA3E7E63117213AA6FF36D7D6)&lt;A where A1: Swift.Decodable&gt;(with: Foundation.URLRequest, decodingType: A1.Type, completionHandler: (Swift.Optional&lt;Swift.Decodable&gt;, Swift.Optional&lt;TABTest.APIError&gt;) -&gt; ()) -&gt; __ObjC.URLSessionDataTask"
+                  moduleName = "TABTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/master/Desktop/Developer/TABTest/TABTest/Common/APIClient.swift"
+                  timestampString = "546012416.450199"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "116">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Common/APIClient.swift"
+            timestampString = "546012415.999058"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "decodingTask(with:decodingType:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Common/APIClient.swift"
+            timestampString = "546012415.999117"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "decodingTask(with:decodingType:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Common/APIClient.swift"
+            timestampString = "546012415.999174"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "decodingTask(with:decodingType:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TABTest/Common/APIClient.swift"
+            timestampString = "546012434.044299"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "decodingTask(with:decodingType:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
