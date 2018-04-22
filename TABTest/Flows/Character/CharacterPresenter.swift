@@ -12,35 +12,49 @@
 
 import UIKit
 
-protocol CharacterPresentationLogic
-{
-  func presentCharacterList(response: CharacterModels.ListCharacters.Response)
+/// Presentation Logic for entity Character.
+protocol CharacterPresentationLogic{  /// Presentation logic to present a list of characters. Consumes  CharacterModels.ListCharacters.Response object for presentation logic.
+    /// - parameter response: Response object containig an array of Character entities.
+    func presentCharacterList(response: CharacterModels.ListCharacters.Response)
 }
-
-class CharacterPresenter: CharacterPresentationLogic
-{
-  weak var viewController: CharacterDisplayLogic?
-  
-  // MARK: Do something
-  
+/// Character Presenter class that implements CharacterPresentationLogic.
+class CharacterPresenter: CharacterPresentationLogic{
+    /// The view controller instance that implements CharacterDisplayLogic. Presenter uses this to update views on view controller for actual display.
+    weak var viewController: CharacterDisplayLogic?
+    
+    // MARK: Class Methods
+    
+    /// Class method that presents  CharacterTableViewCell using view model.
+    /// - parameter cell: CharacterTableViewCell that displays the character.
+    /// - parameter viewModel : viewModel Class that contains all the data to be represented on the view
+    class func presentChacracterCell(cell : CharacterTableViewCell , viewModel : CharacterModels.ListCharacters.CharacterCellVM)
+    {
+        cell.chacracterImageView.loadImageUsingCache(withUrl: viewModel.photoUrl)
+        cell.characterNameLabel.text = viewModel.nameString
+        cell.setNeedsUpdateConstraints()
+        cell.updateConstraints()
+    }
+    // MARK: CharacterPresentationLogic implementation.
+    
+    /// Method that presents an array of Character Entities into viewController.
+    /// - parameter response: Response object containing an array of character entities.
     func presentCharacterList(response: CharacterModels.ListCharacters.Response)
     {
         let viewModel = CharacterViewModelFactory.makeCharacterListViewModel(characters: response.characters)
-        
+        viewController?.displayCharacterList(listViewModel: viewModel)
     }
- /* func presentSomething(response: Character.Something.Response)
-  {
-    let viewModel = Character.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }*/
 }
-
-class CharacterViewModelFactory
-{
+/// Factory Class that creates ViewModels related to character entity.
+class CharacterViewModelFactory{
+    // MARK: Class Methods
+    
+    /// Class method that creates and returns CharacterListViewModels (CharacterModels.ListCharacters.CharacterListVM).
+    /// - parameter characters: An array of character models.
+    /// - returns : viewModel Class that contains information to render a list of Character entities
     class func makeCharacterListViewModel(characters : [Character]) -> CharacterModels.ListCharacters.CharacterListVM
     {
         var listViewModel = CharacterModels.ListCharacters.CharacterListVM()
-       
+        
         for character in characters
         {
             let cellViewModel = CharacterViewModelFactory.makeCharacterCellViewModel(character: character)
@@ -55,7 +69,7 @@ class CharacterViewModelFactory
         
         cellViewModel.nameString = character.name
         cellViewModel.photoUrl = character.thumbnail.fullPath
-        
+        print("Full Path" , cellViewModel.photoUrl)
         return cellViewModel
     }
 }

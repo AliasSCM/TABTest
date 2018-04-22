@@ -12,29 +12,41 @@
 
 import UIKit
 
-/// Declares all the business logic that is to be done for this use case  : MA-001
-protocol CharacterBusinessLogic
-{
-   func getCharactersFromEndPoint(request: CharacterModels.ListCharacters.Request)
+// CharacterBusinessLogic
+/// - important: Declares all the business logic that is to be done for this use case  : MA-001.
+protocol CharacterBusinessLogic{
+    // Business Logic to get characters from server.
+    /// - parameter request: Request Object
+    func getCharactersFromEndPoint(request: CharacterModels.ListCharacters.Request)
 }
-/// Datastore for character data at runtime
-protocol CharacterDataStore
-{
-  var characters: [Character]! { get set }
+/// CharacterData Store
+/// Datastore for character data at runtime.
+protocol CharacterDataStore{
+    var characters: [Character]! { get set }
 }
-///Class to implement all business logic related to character for use case : MA-001
-class CharacterInteractor: CharacterBusinessLogic, CharacterDataStore
-{
-  var presenter     : CharacterPresentationLogic?
-  var worker        : CharacterWorker = CharacterWorker.init(store: CharacterAPI())
-  var characters    : [Character]!
-  
+/// Interactor class that performs all business logic.
+/// Class to implement all business logic related to character for use case : MA-001.
+/// - important: Class must implement CharacterBusinessLogic and CharacterDataStore
+class CharacterInteractor: CharacterBusinessLogic, CharacterDataStore{
+    /// Presenter the interactor uses to ask it to present things on screen after business logic is complete
+    var presenter     : CharacterPresentationLogic?
+    /// Worker class the interactor uses to do the work of performing CRUD operations.
+    /// - important : Must initialize with an instance that implements CharacterStoreProtocol. Currently initializign it with CharacterAPI
+    var worker        : CharacterWorker = CharacterWorker.init(store: CharacterAPI())
+    /// CharacterDataStore implementation.
+    ///  Used to store all characters in an array.
+    var characters    : [Character]!
+    
+    // MARK: Implementing CharacterBusinessLogic
+    
+    // Method to get characters using worker class.
+    /// - parameter request: Request Object
     func getCharactersFromEndPoint(request: CharacterModels.ListCharacters.Request)
     {
         worker.getCharactersFromEndPoint() {response , error in
             if let theResponse = response
             {
-               self.presenter?.presentCharacterList(response: theResponse)
+                self.presenter?.presentCharacterList(response: theResponse)
             }
             if let theError = error
             {
@@ -42,14 +54,4 @@ class CharacterInteractor: CharacterBusinessLogic, CharacterDataStore
             }
         }
     }
-  // MARK: Do something
-  
-  /*func doSomething(request: Character.Something.Request)
-  {
-    worker = CharacterWorker()
-    worker?.doSomeWork()
-    
-    let response = Character.Something.Response()
-    presenter?.presentSomething(response: response)
-  }*/
 }

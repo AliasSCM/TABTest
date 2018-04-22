@@ -12,16 +12,31 @@
 
 import UIKit
 
-class CharacterWorker
-{
+// Character Worker Class.
+/// Class that does the work of CRUD operations related to character.
+/// - important: This class requires to be initialized with an instance of CharacterStoreProtocol using which the worker can do CRUD operations.
+class CharacterWorker{
+    /// Character store protocol instance that worker uses for CRUD operations.
+    /// - important: This dependency has to be fullfilled.
     var characterStore: CharacterStoreProtocol
     
-    init(store : CharacterStoreProtocol)
+    // MARK: Init Methods
+    
+    // Init Method.
+    /// Initializing the worker with a class that implements CharacterStoreProtocol.
+    /// - parameter store: Instance that implements CharacterStoreProtocol.
+    required init(store : CharacterStoreProtocol)
     {
         self.characterStore  = store
     }
+    // MARK: Public Worker Methods
     
-    func getCharactersFromEndPoint(completionHandler : @escaping (CharacterModels.ListCharacters.Response? , APIError?) -> Void)
+    // Worker method that does the work of getting data from characterStore instance.
+    /// - important: All cases of fetch results need to be handled and passed on.
+    /// - parameter completionHandler: Handler function that is called when fetch completes. Passing, response object and error object as optionals
+    /// - parameter response : Response object with array of characters
+    /// - parameter error : error of type APIError
+    func getCharactersFromEndPoint(completionHandler : @escaping (_ response :CharacterModels.ListCharacters.Response? , _ error : APIError?) -> Void)
     {
         self.characterStore.fetchCharacters(){result in
             switch result

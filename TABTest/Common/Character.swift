@@ -12,7 +12,7 @@ struct Thumbnail : Decodable{
     let path : String!
     let ext  : String!
     var fullPath : String{
-        get{ return path + ext }
+        get{ return path + "." + ext }
     }
     enum CodingKeys : String, CodingKey {
         case path
