@@ -71,4 +71,20 @@ enum CharacterModels{
         }
         
     }
+     /// Use Case : MA-002
+    enum CharacterDetail
+    {
+        struct CharacterDetailVM
+        {
+            var headingModel : ListCharacters.CharacterCellVM!
+            var descriptionVM : CharacterDescriptionCellVM!
+        }
+        struct CharacterDescriptionCellVM
+        {
+            static var CellID : String = "CharacterDescriptionTableViewCell"
+            var descriptionString : String!
+
+        }
+        
+    }
 }

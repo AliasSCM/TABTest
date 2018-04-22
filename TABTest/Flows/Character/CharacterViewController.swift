@@ -67,16 +67,6 @@ class CharacterViewController: UIViewController, CharacterDisplayLogic , UITable
     }
     // MARK: Routing
     
-    /// Overriding Prepare for segue method.
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
     // MARK: View lifecycle
     /// Overriding viewDidLoad.
     /// - important : Do these here.
@@ -157,5 +147,11 @@ class CharacterViewController: UIViewController, CharacterDisplayLogic , UITable
         cell.delegate = self
         CharacterPresenter.presentChacracterCell(cell: cell , viewModel: viewModel.cellViewModels[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        interactor?.selectCharacter(indexPath: indexPath)
+        router?.routeToChallengeDetail(segue: nil)
     }
 }

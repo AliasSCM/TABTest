@@ -34,6 +34,17 @@ class CharacterPresenter: CharacterPresentationLogic{
         cell.setNeedsUpdateConstraints()
         cell.updateConstraints()
     }
+    
+    /// Class method that presents  CharacterDescriptionTableViewCell using view model.
+    /// - parameter cell: CharacterDescriptionTableViewCell that displays the character decription.
+    /// - parameter viewModel : viewModel Class that contains all the data to be represented on the view
+    class func presentChacracterDescriptionCell(cell : CharacterDescriptionTableViewCell , viewModel : CharacterModels.CharacterDetail.CharacterDescriptionCellVM)
+    {
+        cell.descriptionLabel.text = viewModel.descriptionString
+    }
+    
+    
+    
     // MARK: CharacterPresentationLogic implementation.
     
     /// Method that presents an array of Character Entities into viewController.
@@ -63,13 +74,43 @@ class CharacterViewModelFactory{
         
         return listViewModel
     }
+    /// Class method that creates and returns CharacterCellViewModels (CharacterModels.ListCharacters.CharacterCellVM).
+    /// - parameter character: A single character models.
+    /// - returns : viewModel Class that contains information to render a single Character entitie
     class func makeCharacterCellViewModel(character : Character) -> CharacterModels.ListCharacters.CharacterCellVM
     {
         var cellViewModel = CharacterModels.ListCharacters.CharacterCellVM()
-        
+      
         cellViewModel.nameString = character.name
         cellViewModel.photoUrl = character.thumbnail.fullPath
         print("Full Path" , cellViewModel.photoUrl)
+          print("DESCRIPTION" , character.descrip)
         return cellViewModel
+    }
+    
+    class func makeCharacterDetailViewModel(character : Character) -> CharacterModels.CharacterDetail.CharacterDetailVM
+    {
+        var viewModel = CharacterModels.CharacterDetail.CharacterDetailVM()
+        viewModel.headingModel = CharacterViewModelFactory.makeCharacterCellViewModel(character: character)
+        viewModel.descriptionVM = CharacterViewModelFactory.makeCharacterDescriptionViewModel(character: character)
+        
+        return viewModel
+        
+    }
+    
+    class func makeCharacterDescriptionViewModel(character : Character) ->CharacterModels.CharacterDetail.CharacterDescriptionCellVM
+    {
+        var viewModel = CharacterModels.CharacterDetail.CharacterDescriptionCellVM()
+        if(character.descrip.count > 0)
+        {
+              viewModel.descriptionString = character.descrip
+        }
+        else
+        {
+            viewModel.descriptionString = "There is no description for this character"
+        }
+      
+        
+        return viewModel
     }
 }

@@ -18,11 +18,15 @@ protocol CharacterBusinessLogic{
     // Business Logic to get characters from server.
     /// - parameter request: Request Object
     func getCharactersFromEndPoint(request: CharacterModels.ListCharacters.Request)
+    // Business Logic to handle charcter selcetion.
+    /// - parameter indexPath: IndexPath of selected character.
+    func selectCharacter(indexPath : IndexPath)
 }
 /// CharacterData Store
 /// Datastore for character data at runtime.
 protocol CharacterDataStore{
     var characters: [Character]! { get set }
+    var selectedCharacter : Character! {get set}
 }
 /// Interactor class that performs all business logic.
 /// Class to implement all business logic related to character for use case : MA-001.
@@ -36,6 +40,8 @@ class CharacterInteractor: CharacterBusinessLogic, CharacterDataStore{
     /// CharacterDataStore implementation.
     ///  Used to store all characters in an array.
     var characters    : [Character]!
+    /// Used to store value of current selected character
+    var selectedCharacter : Character!
     
     // MARK: Implementing CharacterBusinessLogic
     
@@ -46,6 +52,7 @@ class CharacterInteractor: CharacterBusinessLogic, CharacterDataStore{
         worker.getCharactersFromEndPoint() {response , error in
             if let theResponse = response
             {
+                self.characters = theResponse.characters
                 self.presenter?.presentCharacterList(response: theResponse)
             }
             if let theError = error
@@ -53,5 +60,10 @@ class CharacterInteractor: CharacterBusinessLogic, CharacterDataStore{
                 
             }
         }
+    }
+    
+    func selectCharacter(indexPath: IndexPath)
+    {
+       self.selectedCharacter = characters[indexPath.row]
     }
 }
