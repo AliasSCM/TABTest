@@ -100,7 +100,7 @@ extension APIClient
                       
                         let dict = data.convertToDictionary()
                         let selectedData = self.selectRoot(dictionary: dict!)
-                        print(dict)
+
                         let genericModel = try JSONDecoder().decode(decodingType, from: selectedData!)
                         completion(genericModel, nil)
     
