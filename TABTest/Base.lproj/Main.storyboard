@@ -127,7 +127,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wRV-an-ODD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="629"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CharacterTableViewCell" rowHeight="220" id="3u9-Tt-prw" customClass="CharacterTableViewCell" customModule="TABTest" customModuleProvider="target">
@@ -144,9 +144,6 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Edk-up-T0N" customClass="AsyncImageView" customModule="TABTest" customModuleProvider="target">
                                                     <rect key="frame" x="2" y="4" width="371" height="169"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="371" id="nhV-rt-WQp"/>
-                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHF-H4-NT8">
                                                     <rect key="frame" x="16" y="177" width="343" height="32"/>
@@ -157,6 +154,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Edk-up-T0N" secondAttribute="trailing" constant="2" id="5cw-v5-Jqg"/>
                                                 <constraint firstAttribute="bottom" secondItem="PPh-ee-CPZ" secondAttribute="bottom" constant="4" id="6pi-aD-urz"/>
                                                 <constraint firstAttribute="trailing" secondItem="AHF-H4-NT8" secondAttribute="trailing" constant="16" id="7e3-2D-KN4"/>
                                                 <constraint firstAttribute="bottom" secondItem="Edk-up-T0N" secondAttribute="bottom" constant="47" id="AZa-oM-zyn"/>
@@ -214,13 +212,16 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="detailButtonDidPress:" destination="hkw-Hr-4a7" eventType="touchDown" id="XtD-bK-yiU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="BIO-Tj-ez0" firstAttribute="top" secondItem="wRV-an-ODD" secondAttribute="bottom" constant="-6" id="08p-Ox-FLV"/>
                             <constraint firstItem="BIO-Tj-ez0" firstAttribute="leading" secondItem="C3y-Zk-fjL" secondAttribute="leading" id="3Dr-Nb-jAX"/>
                             <constraint firstItem="C3y-Zk-fjL" firstAttribute="trailing" secondItem="BIO-Tj-ez0" secondAttribute="trailing" id="MPY-jP-5oY"/>
+                            <constraint firstItem="C3y-Zk-fjL" firstAttribute="bottom" secondItem="wRV-an-ODD" secondAttribute="bottom" constant="44" id="QSV-h8-7NR"/>
                             <constraint firstItem="wRV-an-ODD" firstAttribute="trailing" secondItem="C3y-Zk-fjL" secondAttribute="trailing" id="S0E-jQ-6QP"/>
                             <constraint firstItem="wRV-an-ODD" firstAttribute="top" secondItem="snK-Gy-Jr5" secondAttribute="top" id="T4J-3b-nSv"/>
                             <constraint firstItem="wRV-an-ODD" firstAttribute="leading" secondItem="C3y-Zk-fjL" secondAttribute="leading" id="Ulp-yQ-uR3"/>
@@ -230,11 +231,51 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="wRV-an-ODD" id="eD6-lR-xyV"/>
+                        <outlet property="tableViewBottomConstraint" destination="QSV-h8-7NR" id="pZz-3N-yGk"/>
+                        <outlet property="urlButton" destination="BIO-Tj-ez0" id="rk9-hu-hXd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmA-PQ-IMI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1143.2" y="105.69715142428787"/>
+        </scene>
+        <!--Web Kit View Controller-->
+        <scene sceneID="mke-Dr-9xl">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="d31-vI-FGh" customClass="WebKitViewController" customModule="TABTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UuF-qe-lxd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWZ-wy-weU">
+                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5Iu-fI-Ynx"/>
+                                    <constraint firstAttribute="width" constant="46" id="aI2-M3-X3d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="0.8862745098" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="d31-vI-FGh" eventType="touchUpInside" id="BLr-dA-khs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GWZ-wy-weU" firstAttribute="top" secondItem="qq5-ru-3yt" secondAttribute="top" id="L6o-gk-RFC"/>
+                            <constraint firstItem="GWZ-wy-weU" firstAttribute="leading" secondItem="qq5-ru-3yt" secondAttribute="leading" constant="16" id="S1a-Rs-xFl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qq5-ru-3yt"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="GWZ-wy-weU" id="GDS-JI-n4r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qm2-Nh-T0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1868" y="109.29535232383809"/>
         </scene>
     </scenes>
 </document>

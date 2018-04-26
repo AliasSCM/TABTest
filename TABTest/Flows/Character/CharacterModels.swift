@@ -57,6 +57,11 @@ enum CharacterModels{
                 case count
             }
         }
+        
+        struct ErrorResponse
+        {
+            var errorMessage : String!
+        }
         /// View Model for listing characters in a table view
         struct CharacterListVM
         {
@@ -69,21 +74,26 @@ enum CharacterModels{
             var nameString : String!
             var photoUrl   : String!
         }
-        
     }
      /// Use Case : MA-002
     enum CharacterDetail
     {
         struct CharacterDetailVM
         {
-            var headingModel : ListCharacters.CharacterCellVM!
-            var descriptionVM : CharacterDescriptionCellVM!
+            var headingModel : ListCharacters.CharacterCellVM
+            var descriptionVM : CharacterDescriptionCellVM
+            var buttonURLVM   : CharacterURLButtonVM!
         }
         struct CharacterDescriptionCellVM
         {
             static var CellID : String = "CharacterDescriptionTableViewCell"
             var descriptionString : String!
 
+        }
+        struct CharacterURLButtonVM
+        {
+            var titleString : String!
+            var urlString   : String!
         }
         
     }

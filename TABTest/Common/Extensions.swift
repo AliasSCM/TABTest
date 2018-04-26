@@ -8,8 +8,13 @@
 
 import Foundation
 
+/// Extension file which has all the extensions to classes we need.
+
+/// Extending Data to handle converting to ARRAY and DICTIONARY
 extension Data
 {
+    /// Function to convert Data to JSON Array
+    /// returns : the converted JSON Array
     func convertToJSONArray() -> Array<[String : Any]>?
     {
         do
@@ -22,7 +27,8 @@ extension Data
         }
         return nil
     }
-    
+    /// Function to convert Data to JSON Object
+    /// returns : the converted JSON Object
     func convertToDictionary() -> [String: Any]?
     {
         do

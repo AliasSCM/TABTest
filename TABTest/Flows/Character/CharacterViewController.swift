@@ -17,6 +17,9 @@ protocol CharacterDisplayLogic: class{
     /// Display logic to display a list of characters. Consumes  CharacterModels.ListCharacters.CharacterListVM object for displaying on table view.
     /// - parameter listViewModel: ViewModel object that contains all information to render a list of Character entities on screen.
     func displayCharacterList(listViewModel : CharacterModels.ListCharacters.CharacterListVM)
+    /// Display logic to display an error when character list fails.
+    /// - parameter errorMessage : Error Message as a string
+    func displayCharacterListError(errorMessage : String)
 }
 /// View Controller class that shows a list of character entites in a table view.
 /// - important: Follow these steps to use class
@@ -24,7 +27,7 @@ protocol CharacterDisplayLogic: class{
 /// + Character Display logic has to be implemented.
 /// + Implement table view data source and delegate methods.
 /// + The table view uses CharacterTableView cell which is dynamically sized based on image asynchronously loaded so it has to implement CharacterTableViewCellProtocol to get notified when image download completes. Use this handler to update table view accordingly.
-class CharacterViewController: UIViewController, CharacterDisplayLogic , UITableViewDelegate , UITableViewDataSource , CharacterTableViewCellProtocol{
+class CharacterViewController: BaseViewController, CharacterDisplayLogic , UITableViewDelegate , UITableViewDataSource , CharacterTableViewCellProtocol{
     // MARK: VIPER iVars.
     /// interactor variable the view controller uses to call business logic or pass touch events.
     var interactor: CharacterBusinessLogic?
@@ -77,6 +80,7 @@ class CharacterViewController: UIViewController, CharacterDisplayLogic , UITable
         super.viewDidLoad()
         tableView.delegate      =   self
         tableView.dataSource    =   self
+        self.showActivityIndicator("Calling Marvel!")
         interactor?.getCharactersFromEndPoint(request: CharacterModels.ListCharacters.Request())
     }
     /// Overriding viewWillAppear.
@@ -86,6 +90,7 @@ class CharacterViewController: UIViewController, CharacterDisplayLogic , UITable
     {
         super.viewWillAppear(animated)
         self.navigationItem.title = "Characters"
+        
     }
     // MARK: Implementing CharacterViewControllerDisplayLogic
     
@@ -93,9 +98,17 @@ class CharacterViewController: UIViewController, CharacterDisplayLogic , UITable
     /// - parameter listViewModel : The view model that contains all the data to be rendered onto table view.
     func displayCharacterList(listViewModel: CharacterModels.ListCharacters.CharacterListVM)
     {
+        self.removeActivityIndicator()
         viewModel = listViewModel
         self.tableView.reloadData()
     }
+    /// Displays error when character list fails
+    /// - parameter errorMessage : The error message as string.
+    func displayCharacterListError(errorMessage: String)
+    {
+        self.showAlert(title: "Thor's hammer is too heavy to lift!", descrip: "We could not load this for you at this time. Please try again")
+    }
+  
     // MARK: Implementing CharacterTableViewCellProtocol
     
     /// Implemented CharacterTableViewCellProtocol to get notified when image finishes downloading.
@@ -151,6 +164,7 @@ class CharacterViewController: UIViewController, CharacterDisplayLogic , UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        tableView.deselectRow(at: indexPath, animated: true)
         interactor?.selectCharacter(indexPath: indexPath)
         router?.routeToChallengeDetail(segue: nil)
     }

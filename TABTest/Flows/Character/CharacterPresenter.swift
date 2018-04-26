@@ -13,9 +13,14 @@
 import UIKit
 
 /// Presentation Logic for entity Character.
-protocol CharacterPresentationLogic{  /// Presentation logic to present a list of characters. Consumes  CharacterModels.ListCharacters.Response object for presentation logic.
+protocol CharacterPresentationLogic{
+    /// Presentation logic to present a list of characters. Consumes  CharacterModels.ListCharacters.Response object for presentation logic.
     /// - parameter response: Response object containig an array of Character entities.
     func presentCharacterList(response: CharacterModels.ListCharacters.Response)
+    /// Presentation logic to present an error when loading of characters fail.
+    /// - parameter response: Response object containing the error message of response.
+    func presentCharacterListError(response: CharacterModels.ListCharacters.ErrorResponse)
+    
 }
 /// Character Presenter class that implements CharacterPresentationLogic.
 class CharacterPresenter: CharacterPresentationLogic{
@@ -54,6 +59,13 @@ class CharacterPresenter: CharacterPresentationLogic{
         let viewModel = CharacterViewModelFactory.makeCharacterListViewModel(characters: response.characters)
         viewController?.displayCharacterList(listViewModel: viewModel)
     }
+    /// Method that presents an error when Character List fails.
+    /// - parameter response: Response object containing an array of character entities.
+    func presentCharacterListError(response: CharacterModels.ListCharacters.ErrorResponse)
+    {
+       
+        viewController?.displayCharacterListError(errorMessage: response.errorMessage)
+    }
 }
 /// Factory Class that creates ViewModels related to character entity.
 class CharacterViewModelFactory{
@@ -80,37 +92,53 @@ class CharacterViewModelFactory{
     class func makeCharacterCellViewModel(character : Character) -> CharacterModels.ListCharacters.CharacterCellVM
     {
         var cellViewModel = CharacterModels.ListCharacters.CharacterCellVM()
-      
+        
         cellViewModel.nameString = character.name
         cellViewModel.photoUrl = character.thumbnail.fullPath
         print("Full Path" , cellViewModel.photoUrl)
-          print("DESCRIPTION" , character.descrip)
+        print("DESCRIPTION" , character.descrip)
         return cellViewModel
     }
-    
+    /// Class method that creates and returns CharacterDetailViewModels (CharacterModels.CharacterDetail.CharacterDetaulVM).
+    /// - parameter character: A single character model.
+    /// - returns : viewModel Class that contains information to render a single Character in its detail
     class func makeCharacterDetailViewModel(character : Character) -> CharacterModels.CharacterDetail.CharacterDetailVM
     {
-        var viewModel = CharacterModels.CharacterDetail.CharacterDetailVM()
-        viewModel.headingModel = CharacterViewModelFactory.makeCharacterCellViewModel(character: character)
-        viewModel.descriptionVM = CharacterViewModelFactory.makeCharacterDescriptionViewModel(character: character)
         
-        return viewModel
-        
+        let headingViewModel = CharacterViewModelFactory.makeCharacterCellViewModel(character: character)
+        let descriptionViewModel = CharacterViewModelFactory.makeCharacterDescriptionViewModel(character: character)
+        var buttonVM : CharacterModels.CharacterDetail.CharacterURLButtonVM? = nil
+        if let urlContainer = character.getUrl(type: "detail")
+        {
+             buttonVM = CharacterViewModelFactory.makeCharacterURLButtonViewModel(urlContainer: urlContainer)
+        }
+        return CharacterModels.CharacterDetail.CharacterDetailVM(headingModel: headingViewModel, descriptionVM: descriptionViewModel, buttonURLVM: buttonVM)
+  
     }
-    
+    /// Class method that creates and returns CharacterDescriptionViewModel (CharacterModels.CharacterDetail.CharacterDescriptionCellVM).
+    /// - parameter character: A single character model.
+    /// - returns : viewModel Class that contains information to render a single Characters description
     class func makeCharacterDescriptionViewModel(character : Character) ->CharacterModels.CharacterDetail.CharacterDescriptionCellVM
     {
         var viewModel = CharacterModels.CharacterDetail.CharacterDescriptionCellVM()
-        if(character.descrip.count > 0)
-        {
-              viewModel.descriptionString = character.descrip
+        if(character.descrip.count > 0){
+            viewModel.descriptionString = character.descrip
         }
-        else
-        {
+        else{
             viewModel.descriptionString = "There is no description for this character"
         }
-      
+        return viewModel
+    }
+    /// Class method that creates and returns CharacterButtonURLViewModel (CharacterModels.CharacterDetail.CharacterURLButtonVM).
+    /// - parameter character: A single character model.
+    /// - returns : viewModel Class that contains information to render URL button with character URL's
+    class func makeCharacterURLButtonViewModel(urlContainer : URLContainer) ->CharacterModels.CharacterDetail.CharacterURLButtonVM
+    {
+        var viewModel = CharacterModels.CharacterDetail.CharacterURLButtonVM()
+        viewModel.titleString = urlContainer.type
+        viewModel.urlString = urlContainer.url
         
         return viewModel
+        
     }
 }

@@ -8,9 +8,9 @@
 
 import UIKit
 
+/// Class that encapsulates the cell to display the description of the character as a string.
 class CharacterDescriptionTableViewCell: UITableViewCell {
-
-    
+    /// The description label to display description
     @IBOutlet var descriptionLabel: UILabel!
     
     override func awakeFromNib() {

@@ -57,11 +57,12 @@ class CharacterInteractor: CharacterBusinessLogic, CharacterDataStore{
             }
             if let theError = error
             {
-                
+                self.presenter?.presentCharacterListError(response: CharacterModels.ListCharacters.ErrorResponse(errorMessage :theError.localizedDescription))
             }
         }
     }
-    
+    /// Method to select current character when detail is being displayed
+    /// - parameter : Index Path of the character found in the characters array
     func selectCharacter(indexPath: IndexPath)
     {
        self.selectedCharacter = characters[indexPath.row]

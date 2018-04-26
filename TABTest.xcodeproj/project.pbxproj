@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		AF198D12208C6B0000037DF6 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF198D11208C6AFF00037DF6 /* CharacterTableViewCell.swift */; };
-		AF198D14208C837A00037DF6 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF198D13208C837A00037DF6 /* UIImageExtension.swift */; };
 		AF198D16208C8A3200037DF6 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF198D15208C8A3200037DF6 /* AsyncImageView.swift */; };
 		AF198D18208CF68600037DF6 /* CharacterDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF198D17208CF68600037DF6 /* CharacterDescriptionTableViewCell.swift */; };
 		AF198D1C208CF7FE00037DF6 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF198D1B208CF7FD00037DF6 /* CharacterDetailViewController.swift */; };
+		AF23F6482091D3CB008F4337 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23F6472091D3CB008F4337 /* BaseViewController.swift */; };
+		AF23F64A2091E70C008F4337 /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF23F6492091E70C008F4337 /* WebKitViewController.swift */; };
 		AFC0918C208B033C000FEBE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC0918B208B033C000FEBE8 /* AppDelegate.swift */; };
-		AFC0918E208B033C000FEBE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC0918D208B033C000FEBE8 /* ViewController.swift */; };
 		AFC09191208B033D000FEBE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC0918F208B033D000FEBE8 /* Main.storyboard */; };
 		AFC09194208B033F000FEBE8 /* TABTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFC09192208B033F000FEBE8 /* TABTest.xcdatamodeld */; };
 		AFC09196208B0342000FEBE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC09195208B0342000FEBE8 /* Assets.xcassets */; };
@@ -30,7 +30,7 @@
 		AFC091E4208B1EB9000FEBE8 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC091E3208B1EB9000FEBE8 /* Character.swift */; };
 		AFC091E6208B243F000FEBE8 /* CharacterStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC091E5208B243F000FEBE8 /* CharacterStoreProtocol.swift */; };
 		AFC091E8208B2A27000FEBE8 /* CharacterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC091E7208B2A27000FEBE8 /* CharacterAPI.swift */; };
-		AFC091EA208B465D000FEBE8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC091E9208B465D000FEBE8 /* StringExtension.swift */; };
+		AFC091EA208B465D000FEBE8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC091E9208B465D000FEBE8 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,13 +52,13 @@
 
 /* Begin PBXFileReference section */
 		AF198D11208C6AFF00037DF6 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
-		AF198D13208C837A00037DF6 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		AF198D15208C8A3200037DF6 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		AF198D17208CF68600037DF6 /* CharacterDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		AF198D1B208CF7FD00037DF6 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		AF23F6472091D3CB008F4337 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		AF23F6492091E70C008F4337 /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
 		AFC09188208B033B000FEBE8 /* TABTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TABTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC0918B208B033C000FEBE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AFC0918D208B033C000FEBE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AFC09190208B033D000FEBE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFC09193208B033F000FEBE8 /* TABTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TABTest.xcdatamodel; sourceTree = "<group>"; };
 		AFC09195208B0342000FEBE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		AFC091E3208B1EB9000FEBE8 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		AFC091E5208B243F000FEBE8 /* CharacterStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStoreProtocol.swift; sourceTree = "<group>"; };
 		AFC091E7208B2A27000FEBE8 /* CharacterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAPI.swift; sourceTree = "<group>"; };
-		AFC091E9208B465D000FEBE8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		AFC091E9208B465D000FEBE8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +143,6 @@
 				AFC091E0208B1D8C000FEBE8 /* Common */,
 				AFC091D0208B1D33000FEBE8 /* Flows */,
 				AFC0918B208B033C000FEBE8 /* AppDelegate.swift */,
-				AFC0918D208B033C000FEBE8 /* ViewController.swift */,
 				AFC0918F208B033D000FEBE8 /* Main.storyboard */,
 				AFC09195208B0342000FEBE8 /* Assets.xcassets */,
 				AFC09197208B0343000FEBE8 /* LaunchScreen.storyboard */,
@@ -201,9 +200,10 @@
 			children = (
 				AFC091E1208B1D8C000FEBE8 /* APIClient.swift */,
 				AFC091E3208B1EB9000FEBE8 /* Character.swift */,
-				AFC091E9208B465D000FEBE8 /* StringExtension.swift */,
-				AF198D13208C837A00037DF6 /* UIImageExtension.swift */,
+				AFC091E9208B465D000FEBE8 /* Extensions.swift */,
 				AF198D15208C8A3200037DF6 /* AsyncImageView.swift */,
+				AF23F6472091D3CB008F4337 /* BaseViewController.swift */,
+				AF23F6492091E70C008F4337 /* WebKitViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -346,6 +346,7 @@
 				AFC091DA208B1D34000FEBE8 /* CharacterPresenter.swift in Sources */,
 				AF198D1C208CF7FE00037DF6 /* CharacterDetailViewController.swift in Sources */,
 				AFC091E8208B2A27000FEBE8 /* CharacterAPI.swift in Sources */,
+				AF23F6482091D3CB008F4337 /* BaseViewController.swift in Sources */,
 				AF198D12208C6B0000037DF6 /* CharacterTableViewCell.swift in Sources */,
 				AFC091E2208B1D8C000FEBE8 /* APIClient.swift in Sources */,
 				AFC091D9208B1D34000FEBE8 /* CharacterModels.swift in Sources */,
@@ -353,14 +354,13 @@
 				AFC091DB208B1D34000FEBE8 /* CharacterRouter.swift in Sources */,
 				AFC091E4208B1EB9000FEBE8 /* Character.swift in Sources */,
 				AFC091DC208B1D34000FEBE8 /* CharacterViewController.swift in Sources */,
-				AFC091EA208B465D000FEBE8 /* StringExtension.swift in Sources */,
+				AFC091EA208B465D000FEBE8 /* Extensions.swift in Sources */,
 				AFC091E6208B243F000FEBE8 /* CharacterStoreProtocol.swift in Sources */,
 				AFC091DD208B1D34000FEBE8 /* CharacterWorker.swift in Sources */,
-				AFC0918E208B033C000FEBE8 /* ViewController.swift in Sources */,
 				AF198D16208C8A3200037DF6 /* AsyncImageView.swift in Sources */,
 				AFC09194208B033F000FEBE8 /* TABTest.xcdatamodeld in Sources */,
+				AF23F64A2091E70C008F4337 /* WebKitViewController.swift in Sources */,
 				AFC0918C208B033C000FEBE8 /* AppDelegate.swift in Sources */,
-				AF198D14208C837A00037DF6 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
