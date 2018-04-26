@@ -8,25 +8,28 @@
 
 import UIKit
 
+/// Class to display character details in view controller. Extends table view delegate and datasource
 class CharacterDetailViewController: UIViewController , UITableViewDataSource , UITableViewDelegate ,  CharacterTableViewCellProtocol
 {
-
+    /// table view bottom constraint to configure based on button
     @IBOutlet var tableViewBottomConstraint: NSLayoutConstraint!
-    
-    @IBOutlet var urlButton: UIButton!
-    @IBOutlet var tableView: UITableView!
+   /// character model using which dtails view modelsare made
     var character : Character!
+    /// view model using which views are made from
     var viewModel : CharacterModels.CharacterDetail.CharacterDetailVM!
-    
+    // MARK: Outlets and actions
+    /// URL button outler at the bottom of the screen
+    @IBOutlet var urlButton: UIButton!
+    ///table view outlet
+    @IBOutlet var tableView: UITableView!
+    //action when close button pressed
     @IBAction func detailButtonDidPress(_ sender: Any)
     {
         let webVC   =   WebKitViewController.createInstance()
         webVC.url   =  URL.init(string: viewModel.buttonURLVM.urlString)
         self.present(webVC, animated: true, completion: nil)
     }
-    
-  
-    
+    // MARK: View Controller Lifecycle
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -46,6 +49,8 @@ class CharacterDetailViewController: UIViewController , UITableViewDataSource , 
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Display function to reload views
+    //display function to make and display views
     func display()
     {
         if(character != nil)
@@ -64,8 +69,6 @@ class CharacterDetailViewController: UIViewController , UITableViewDataSource , 
             }
         }
     }
-    
-    
     // MARK: Implementing CharacterTableViewCellProtocol
     
     /// Implemented CharacterTableViewCellProtocol to get notified when image finishes downloading.
@@ -83,7 +86,7 @@ class CharacterDetailViewController: UIViewController , UITableViewDataSource , 
         
         
     }
-    
+     // MARK: Tableview datasource and delegate
     func numberOfSections(in tableView: UITableView) -> Int
     {
         return 1
